@@ -15,8 +15,8 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
 ### 2. State Management (Redux)
     Implemented using flutter_redux package
     State structure:
+
     
-    ''' dart
     class AppState {
       final List<Cylinder> cylinders;
       final List<CartItem> cart;
@@ -25,7 +25,6 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
       final String? error;
       final bool isProcessingCheckout;
     }
-    '''
     
 
     Actions handling:
@@ -74,7 +73,7 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
     '''
     
 
-5. Async Programming
+### 5. Async Programming
 
     Implemented using:
         Future for API calls
@@ -83,94 +82,94 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
     Example:
 
     
-Future<List<Cylinder>> getCylinders() async {
-  try {
-    final response = await _dio.get('/cylinders');
-    return (response.data as List)
-        .map((json) => Cylinder.fromJson(json))
-        .toList();
-  } catch (e) {
-    throw FetchDataException();
-  }
-}
+    Future<List<Cylinder>> getCylinders() async {
+      try {
+        final response = await _dio.get('/cylinders');
+        return (response.data as List)
+            .map((json) => Cylinder.fromJson(json))
+            .toList();
+      } catch (e) {
+        throw FetchDataException();
+      }
+    }
 
     
 
-6. Performance Optimization
+### 6. Performance Optimization
 
-    Implemented CachedNetworkImage for efficient image loading
     Used proper keys in lists for efficient widget rebuilding
     Implemented immutable state management
     Minimal widget rebuilds through proper state management
 
-Areas for Future Implementation
-1. HTTP/Dio Package Setup
+### Areas for Future Implementation
 
-Currently using mock data. To implement:
-
+    1. HTTP/Dio Package Setup
     
-final dio = Dio(BaseOptions(
-  baseUrl: 'https://api.example.com',
-  connectTimeout: Duration(seconds: 5),
-  receiveTimeout: Duration(seconds: 3),
-));
-
+    Currently using mock data. To implement:
     
-
-2. Offline Support
-
-To implement:
-
-    Add Hive or SQLite for local storage
-    Implement repository pattern with local cache
-    Add synchronization logic
-
+        
+    final dio = Dio(BaseOptions(
+      baseUrl: 'https://api.example.com',
+      connectTimeout: Duration(seconds: 5),
+      receiveTimeout: Duration(seconds: 3),
+    ));
     
-class CylinderRepository {
-  final LocalStorage localStorage;
-  final ApiClient apiClient;
-
-  Future<List<Cylinder>> getCylinders() async {
-    try {
-      final cylinders = await apiClient.fetchCylinders();
-      await localStorage.saveCylinders(cylinders);
-      return cylinders;
-    } catch (e) {
-      return localStorage.getCylinders();
+        
+    
+    2. Offline Support
+    
+    To implement:
+    
+        Add Hive or SQLite for local storage
+        Implement repository pattern with local cache
+        Add synchronization logic
+    
+        
+    class CylinderRepository {
+      final LocalStorage localStorage;
+      final ApiClient apiClient;
+    
+      Future<List<Cylinder>> getCylinders() async {
+        try {
+          final cylinders = await apiClient.fetchCylinders();
+          await localStorage.saveCylinders(cylinders);
+          return cylinders;
+        } catch (e) {
+          return localStorage.getCylinders();
+        }
+      }
     }
-  }
-}
-
     
-
-3. Security
-
-To implement:
-
-    Add SSL pinning
-    Implement secure storage for sensitive data
-    Add authentication and authorization
-    Implement input validation and sanitization
-
-4. Testing
-
-To implement:
-
-    Unit tests for business logic
-    Widget tests for UI components
-    Integration tests for full features Example test structure:
-
+        
     
-void main() {
-  group('Cylinder Repository Tests', () {
-    test('should return list of cylinders when API call is successful', () async {
-      // Test implementation
-    });
-
-    test('should return cached cylinders when API call fails', () async {
-      // Test implementation
-    });
-  });
-}
+    3. Security
+    
+    To implement:
+    
+        Add SSL pinning
+        Implement secure storage for sensitive data
+        Add authentication and authorization
+        Implement input validation and sanitization
+    
+    4. Testing
+    
+    To implement:
+    
+        Unit tests for business logic
+        Widget tests for UI components
+        Integration tests for full features Example test structure:
+    
+        
+    void main() {
+      group('Cylinder Repository Tests', () {
+        test('should return list of cylinders when API call is successful', () async {
+          // Test implementation
+        });
+    
+        test('should return cached cylinders when API call fails', () async {
+          // Test implementation
+        });
+      });
+    }
 
     
