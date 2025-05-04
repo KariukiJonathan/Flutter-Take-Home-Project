@@ -1,5 +1,3 @@
-// lib/data/models/cart_item_model.dart
-
 import 'cylinder_model.dart';
 
 class CartItem {
