@@ -1,11 +1,9 @@
 # Flutter-Take-Home-Project
-LPG Cylinder App Documentation
-Overview
+## LPG Cylinder App Overview
 
 The LPG Cylinder App is a Flutter application that allows users to browse, purchase, and track orders of LPG cylinders. The application implements various modern software development practices and patterns.
-Technical Implementation
-1. Flutter & Dart UI Implementation
 
+### 1. Flutter & Dart UI Implementation
     Built using Flutter SDK
     Implements Material Design principles
     Key screens:
@@ -14,21 +12,20 @@ Technical Implementation
         OrderHistoryScreen: Lists past orders and their status
         CheckoutResultScreen: Displays transaction results
 
-2. State Management (Redux)
-
+### 2. State Management (Redux)
     Implemented using flutter_redux package
     State structure:
-
     
-class AppState {
-  final List<Cylinder> cylinders;
-  final List<CartItem> cart;
-  final List<Order> orders;
-  final bool isLoading;
-  final String? error;
-  final bool isProcessingCheckout;
-}
-
+    '''
+    class AppState {
+      final List<Cylinder> cylinders;
+      final List<CartItem> cart;
+      final List<Order> orders;
+      final bool isLoading;
+      final String? error;
+      final bool isProcessingCheckout;
+    }
+    '''
     
 
     Actions handling:
@@ -38,7 +35,7 @@ class AppState {
         Loading states
         Error handling
 
-3. Data Models
+### 3. Data Models
 
     Implemented immutable data models:
         Cylinder: Represents available cylinders
@@ -50,31 +47,31 @@ class AppState {
         Copy methods
         Type safety
 
-4. Architecture
+### 4. Architecture
 
-The application follows a simplified Domain-Driven Design (DDD) approach:
-
+    The application follows a simplified Domain-Driven Design (DDD) approach:
     
-lib/
-├── core/
-│   ├── constants/
-│   ├── errors/
-│   ├── network/
-│   └── utils/
-├── data/
-│   ├── models/
-│   ├── repositories/
-│   └── datasources/
-├── domain/
-│   ├── entities/
-│   ├── repositories/
-│   └── usecases/
-├── presentation/
-│   ├── screens/
-│   ├── widgets/
-│   └── redux/
-└── main.dart
-
+    '''   
+    lib/
+    ├── core/
+    │   ├── constants/
+    │   ├── errors/
+    │   ├── network/
+    │   └── utils/
+    ├── data/
+    │   ├── models/
+    │   ├── repositories/
+    │   └── datasources/
+    ├── domain/
+    │   ├── entities/
+    │   ├── repositories/
+    │   └── usecases/
+    ├── presentation/
+    │   ├── screens/
+    │   ├── widgets/
+    │   └── redux/
+    └── main.dart
+    '''
     
 
 5. Async Programming
