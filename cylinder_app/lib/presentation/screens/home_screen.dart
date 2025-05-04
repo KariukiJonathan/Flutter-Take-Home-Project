@@ -22,7 +22,6 @@ class _ViewModel {
     return _ViewModel(
       cylinders: store.state.cylinders,
       isLoading: store.state.isLoading,
-      // Correctly define the addToCart function
       addToCart: (cylinder) {
         store.dispatch(AddToCartAction(cylinder));
       },

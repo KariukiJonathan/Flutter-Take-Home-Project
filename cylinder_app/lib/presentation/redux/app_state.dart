@@ -65,7 +65,7 @@ class AppState {
     return cart.isNotEmpty ? cart.first.cylinder.currency : null;
   }
 
-  // Optional: Add toString method for debugging
+  //toString method for debugging
   @override
   String toString() {
     return '''AppState{
@@ -78,7 +78,7 @@ class AppState {
     }''';
   }
 
-  // Optional: Add equality operator
+  // Equality operator
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;

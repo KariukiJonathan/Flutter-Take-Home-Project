@@ -6,7 +6,6 @@ import 'package:redux/redux.dart';
 import '../redux/app_state.dart';
 import '../redux/actions.dart';
 
-// lib/presentation/screens/cart_screen.dart
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

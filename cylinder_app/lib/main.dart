@@ -49,7 +49,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          // Optional: Add more theme customization
           appBarTheme: AppBarTheme(
             elevation: 0,
             centerTitle: true,
@@ -70,7 +69,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: HomeScreen(),
-        // Optional: Add named routes for navigation
         routes: {
           '/home': (context) => HomeScreen(),
           '/cart': (context) => CartScreen(),
@@ -81,7 +79,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Optional: Add error handling
+//Error handling
 class ErrorScreen extends StatelessWidget {
   final String message;
 

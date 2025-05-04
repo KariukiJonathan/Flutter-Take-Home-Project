@@ -13,7 +13,6 @@ List<Middleware<AppState>> createMiddleware() {
   return [
     TypedMiddleware<AppState, FetchCylindersAction>(_fetchCylinders),
     TypedMiddleware<AppState, CheckoutInitiateAction>(_handleCheckout),
-    // Add more middlewares as needed
   ];
 }
 
