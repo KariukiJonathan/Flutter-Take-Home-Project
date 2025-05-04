@@ -16,7 +16,7 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
     Implemented using flutter_redux package
     State structure:
     
-    '''
+    ''' dart
     class AppState {
       final List<Cylinder> cylinders;
       final List<CartItem> cart;
@@ -51,7 +51,7 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
 
     The application follows a simplified Domain-Driven Design (DDD) approach:
     
-    '''   
+    ''' dart
     lib/
     ├── core/
     │   ├── constants/
