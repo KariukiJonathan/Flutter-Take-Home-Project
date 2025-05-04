@@ -50,7 +50,6 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
 
     The application follows a simplified Domain-Driven Design (DDD) approach:
     
-    ''' dart
     lib/
     ├── core/
     │   ├── constants/
@@ -70,7 +69,6 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
     │   ├── widgets/
     │   └── redux/
     └── main.dart
-    '''
     
 
 ### 5. Async Programming
@@ -157,8 +155,11 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
     
         Unit tests for business logic
         Widget tests for UI components
-        Integration tests for full features Example test structure:
-    
+        Integration tests for full features 
+        
+        
+        Example test structure:
+
         
     void main() {
       group('Cylinder Repository Tests', () {
@@ -171,5 +172,3 @@ The LPG Cylinder App is a Flutter application that allows users to browse, purch
         });
       });
     }
-
-    
